@@ -862,6 +862,7 @@
             <p class="text-sm text-zinc-500 dark:text-white/50 font-mono mt-1" id="list-count">9 events in this view</p>
           </div>
           
+          <!-- Scrollable List (在这里添加了 data-lenis-prevent 解除滚动锁定) -->
           <div class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-3" data-lenis-prevent>
             
             <!-- EUROPE ITEMS -->
@@ -1251,8 +1252,8 @@
     // 0. Premium Smooth Scrolling Initialization (Lenis)
     // ----------------------------------------------------
     const lenis = new Lenis({
-      duration: 1.2,  
-      easing: (t) => 1 - Math.pow(1 - t, 4),  
+      duration: 1.2, // UXPeak 风格的响应时间，更干脆轻盈
+      easing: (t) => 1 - Math.pow(1 - t, 4), // 核心：UXPeak 同款的 Quartic Ease-Out (四次方缓出) 曲线
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
@@ -1269,7 +1270,7 @@
     }
     requestAnimationFrame(raf);
 
- 
+    // 拦截导航栏点击事件，触发优美的丝滑滚动动画
     document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -1277,25 +1278,25 @@
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
- 
+          // 特殊处理：如果点击左上角名字(回顶部)，直接滚到绝对坐标 0
           if (targetId === '#main') {
             lenis.scrollTo(0, {
               duration: 1.2,
               easing: (t) => 1 - Math.pow(1 - t, 4)
             });
           } else {
- 
+            // 修复定位不准：计算元素的原始绝对位置（补偿 reveal 动画初始的 40px 垂直偏移）
             const rect = targetElement.getBoundingClientRect();
             let targetY = rect.top + window.scrollY;
             
             if (targetElement.classList.contains('reveal') && !targetElement.classList.contains('active')) {
-              targetY -= 40;  
+              targetY -= 40; // 剔除 translateY(40px) 带来的误差
             }
 
- 
+            // 精准对齐：-90px 刚好抵消 64px 的毛玻璃导航栏，并留出 26px 的高级留白
             lenis.scrollTo(targetY - 90, {
               duration: 1.2,
-              easing: (t) => 1 - Math.pow(1 - t, 4)  
+              easing: (t) => 1 - Math.pow(1 - t, 4) // 带有强烈“阻尼刹车感”的丝滑降落
             });
           }
         }
@@ -1316,11 +1317,12 @@
     function setMapTheme(isDark) {
       if (!map) return;
       
+      // 极简矢量地图样式定义：只有陆地颜色和国界线
       const style = isDark ? {
         fillColor: '#12121a', // Dark mode land
         fillOpacity: 1,
-        color: 'rgba(255, 255, 255, 0.15)', 
-        weight: 1.2 
+        color: 'rgba(255, 255, 255, 0.15)', // 增强了深色模式下的国界线对比度 (从 0.06 提升到 0.15)
+        weight: 1.2 // 稍微加粗国界线
       } : {
         fillColor: '#ffffff', // Light mode land
         fillOpacity: 1,
@@ -1333,7 +1335,7 @@
       } else if (worldGeoJsonData) {
         geoJsonLayer = L.geoJSON(worldGeoJsonData, { 
           style: style, 
-          interactive: false /
+          interactive: false // 禁用国家区块的鼠标交互，保持纯净背景
         }).addTo(map);
       }
     }
@@ -1522,17 +1524,18 @@
     // 4. Real Interactive Map Logic (Leaflet.js)
     // ----------------------------------------------------
     document.addEventListener('DOMContentLoaded', () => {
+      // 对阿姆斯特丹/鹿特丹，以及深圳/香港在视觉坐标上做了微弱离散化处理，防止在宏观视图下挤在一起
       const cities = {
         maastricht: { coords: [50.8391, 5.7160], label: "Maastricht" },
-        amsterdam: { coords: [52.8676, 4.9041], label: "Amsterdam" },
+        amsterdam: { coords: [52.8676, 4.9041], label: "Amsterdam" }, // 视觉上移
         utrecht: { coords: [52.0907, 5.1214], label: "Utrecht" },
-        rotterdam: { coords: [51.4225, 4.37917], label: "Rotterdam" }, 
+        rotterdam: { coords: [51.4225, 4.37917], label: "Rotterdam" }, // 视觉下移
         paris: { coords: [48.8566, 2.3522], label: "Paris" },
         milan: { coords: [45.4642, 9.1900], label: "Milan" },
         denver: { coords: [39.7392, -104.9903], label: "Denver" },
         beijing: { coords: [39.9042, 116.4074], label: "Beijing" },
-        shenzhen: { coords: [23.1431, 114.0579], label: "Shenzhen" }, 
-        hongkong: { coords: [21.5193, 114.1694], label: "Hong Kong" }
+        shenzhen: { coords: [23.1431, 114.0579], label: "Shenzhen" }, // 视觉上移
+        hongkong: { coords: [21.5193, 114.1694], label: "Hong Kong" } // 视觉下移
       };
 
       const europeBounds = [
@@ -1559,6 +1562,7 @@
         .then(topology => {
           worldGeoJsonData = topojson.feature(topology, topology.objects.countries);
           
+          // 修复跨国际日期变更线（Antimeridian）导致的“横线” Bug
           worldGeoJsonData.features.forEach(feature => {
             const fixRing = (ring) => {
               let cross = false;
@@ -1568,6 +1572,7 @@
                   break; 
                 }
               }
+              // 如果多边形跨越了日期变更线，将负经度拉回正轴进行缝合
               if (cross) {
                 ring.forEach(coord => {
                   if (coord[0] < 0) coord[0] += 360;
@@ -1582,6 +1587,7 @@
             }
           });
 
+          // 移除南极洲（Antarctica），它通常会在地图底部产生一条贯穿的巨大横线，且在我们的展示中并不需要
           worldGeoJsonData.features = worldGeoJsonData.features.filter(f => f.properties?.name !== 'Antarctica' && f.id !== '010');
 
           setMapTheme(document.documentElement.classList.contains('dark'));
@@ -1593,6 +1599,7 @@
       Object.entries(cities).forEach(([id, city]) => {
         const isPulse = id === 'maastricht' ? 'pulse' : '';
         
+        // 统一移除了左侧对齐的 className，确保所有标记都是“左点右字”
         const customIcon = L.divIcon({
           className: 'custom-leaflet-icon',
           html: `
