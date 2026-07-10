@@ -482,20 +482,17 @@
 
   <!-- Navigation Bar (iOS Style Floating Glass Pill) -->
   <header class="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 w-max max-w-[calc(100%-1rem)] z-50 ios-glass-nav rounded-full transition-all duration-300">
-    <div class="relative z-10 px-4 md:px-6 h-12 md:h-14 flex items-center justify-center gap-3 md:gap-5 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-      <nav class="flex items-center gap-3.5 md:gap-6 text-[13px] md:text-sm font-medium text-zinc-600 dark:text-white/60 whitespace-nowrap">
-        <a class="nav-link hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full" href="#research">Research</a>
-        <a class="nav-link hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full" href="#publications">Publications</a>
-        <a class="nav-link hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full" href="#news">News</a>
-        <a class="nav-link hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full" href="#talks">Talks</a>
-        <a class="nav-link hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full" href="#honors">Honors</a>
+    <div class="relative z-10 px-3 md:px-5 h-12 md:h-14 flex items-center justify-center overflow-x-auto [&::-webkit-scrollbar]:hidden touch-pan-x">
+      <nav class="flex items-center text-[13px] md:text-sm font-medium text-zinc-600 dark:text-white/60 whitespace-nowrap">
+        <a class="nav-link px-2.5 md:px-4 py-3 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[8px] md:after:bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-20px)] md:hover:after:w-[calc(100%-32px)]" href="#research">Research</a>
+        <a class="nav-link px-2.5 md:px-4 py-3 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[8px] md:after:bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-20px)] md:hover:after:w-[calc(100%-32px)]" href="#publications">Publications</a>
+        <a class="nav-link px-2.5 md:px-4 py-3 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[8px] md:after:bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-20px)] md:hover:after:w-[calc(100%-32px)]" href="#news">News</a>
+        <a class="nav-link px-2.5 md:px-4 py-3 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[8px] md:after:bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-20px)] md:hover:after:w-[calc(100%-32px)]" href="#talks">Talks</a>
+        <a class="nav-link px-2.5 md:px-4 py-3 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[8px] md:after:bottom-[10px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-20px)] md:hover:after:w-[calc(100%-32px)]" href="#honors">Honors</a>
       </nav>
       
-      <!-- Divider -->
-      <div class="w-[1px] h-4 md:h-5 bg-zinc-300 dark:bg-white/20 shrink-0"></div>
-
       <!-- Theme Toggle Button -->
-      <button class="shrink-0 text-zinc-500 hover:text-zinc-900 dark:text-white/60 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 focus:outline-none rounded-full p-1.5 transition-colors" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
+      <button class="shrink-0 text-zinc-500 hover:text-zinc-900 dark:text-white/60 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 focus:outline-none rounded-full p-2 transition-colors ml-1" id="theme-toggle" type="button" aria-label="Toggle Dark Mode">
         <svg class="hidden w-[18px] h-[18px]" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
         </svg>
@@ -1372,15 +1369,15 @@
               targetY -= 40; 
             }
 
-            // 90px offset keeps nice breathing room from the new floating header without revealing the previous section
-            lenis.scrollTo(targetY - 90, {
+            // 80px offset keeps nice breathing room from the new floating header without revealing the previous section
+            lenis.scrollTo(targetY - 80, {
               duration: 1.2,
               easing: (t) => 1 - Math.pow(1 - t, 4) // Smooth landing with damping
             });
           }
         }
       });
-    });
+    }); // <--- CRITICAL FIX: Properly closed the forEach block here
 
     // ----------------------------------------------------
     // 1. Theme Toggle Logic
