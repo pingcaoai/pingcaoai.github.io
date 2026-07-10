@@ -565,8 +565,8 @@
     </section>
 
     <!-- Research Themes -->
-    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32 reveal" id="research">
-      <div class="mb-14 max-w-3xl">
+    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32" id="research">
+      <div class="mb-14 max-w-3xl reveal">
         <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-4">Research Focus</h2>
         <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">AI-driven reproductive medicine.</h3>
       </div>
@@ -614,8 +614,8 @@
     </section>
 
     <!-- Publications -->
-    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32 reveal" id="publications">
-      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 dark:border-white/10 pb-6">
+    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32" id="publications">
+      <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 dark:border-white/10 pb-6 reveal">
         <div>
           <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-3">Selected Publications</h2>
           <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Representative work.</h3>
@@ -758,11 +758,13 @@
     </section>
 
     <!-- News Timeline -->
-    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32 reveal" id="news">
+    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32" id="news">
       <div class="grid md:grid-cols-[1fr_2fr] gap-12">
         <div class="sticky top-32 self-start">
-          <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-3">News & Updates</h2>
-          <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Recent signals.</h3>
+          <div class="reveal">
+            <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-3">News & Updates</h2>
+            <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Recent signals.</h3>
+          </div>
         </div>
         
         <div class="relative ml-3 md:ml-0 mt-4 md:mt-0 py-2">
@@ -874,8 +876,8 @@
     </section>
 
     <!-- Interactive Map: Presentations -->
-    <section class="max-w-6xl mx-auto px-6 mb-16 md:mb-24 reveal relative z-10" id="talks">
-      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 dark:border-white/10 pb-6">
+    <section class="max-w-6xl mx-auto px-6 mb-16 md:mb-24 relative z-10" id="talks">
+      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-200 dark:border-white/10 pb-6 reveal">
         <div>
           <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-3">Presentations</h2>
           <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Global footprint.</h3>
@@ -893,7 +895,7 @@
         </div>
       </div>
       
-      <div class="flex flex-col lg:flex-row gap-6 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-3xl p-5 shadow-sm relative backdrop-blur-md">
+      <div class="flex flex-col lg:flex-row gap-6 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-3xl p-5 shadow-sm relative backdrop-blur-md reveal">
         
         <!-- Real Leaflet Map Canvas Area -->
         <div class="relative w-full lg:w-2/3 aspect-[4/3] lg:aspect-auto lg:h-[560px] bg-zinc-50 dark:bg-black/30 rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10">
@@ -1142,8 +1144,8 @@
     </section>
 
     <!-- Honors Section -->
-    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32 reveal relative z-10" id="honors">
-      <div class="mb-12 border-b border-zinc-200 dark:border-white/10 pb-6">
+    <section class="max-w-6xl mx-auto px-6 mb-20 md:mb-32 relative z-10" id="honors">
+      <div class="mb-12 border-b border-zinc-200 dark:border-white/10 pb-6 reveal">
         <h2 class="text-sm font-mono font-semibold text-accent tracking-widest uppercase mb-3">Honors</h2>
         <h3 class="text-3xl md:text-4xl font-display font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Awards and recognition.</h3>
       </div>
@@ -1360,24 +1362,19 @@
               easing: (t) => 1 - Math.pow(1 - t, 4)
             });
           } else {
-            // Fix target positioning: calculate raw absolute position
-            const rect = targetElement.getBoundingClientRect();
-            let targetY = rect.top + window.scrollY;
+            // Let Lenis handle the target element directly to avoid coordinate shift issues
+            const isMobile = window.innerWidth < 768;
+            const offsetVal = isMobile ? -65 : -80; // Adaptive offset for mobile vs desktop headers
             
-            // Adjust for translateY(40px) if reveal animation hasn't triggered yet
-            if (targetElement.classList.contains('reveal') && !targetElement.classList.contains('active')) {
-              targetY -= 40; 
-            }
-
-            // 80px offset keeps nice breathing room from the new floating header without revealing the previous section
-            lenis.scrollTo(targetY - 80, {
+            lenis.scrollTo(targetElement, {
+              offset: offsetVal,
               duration: 1.2,
-              easing: (t) => 1 - Math.pow(1 - t, 4) // Smooth landing with damping
+              easing: (t) => 1 - Math.pow(1 - t, 4) 
             });
           }
         }
       });
-    }); // <--- CRITICAL FIX: Properly closed the forEach block here
+    });
 
     // ----------------------------------------------------
     // 1. Theme Toggle Logic
