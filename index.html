@@ -11,44 +11,367 @@
   <meta content="#070712" media="(prefers-color-scheme: dark)" name="theme-color"/>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="https://github.com/user-attachments/assets/ea41b2b0-32e7-4a30-9d7f-2f50d91b61ec">
+  <link rel="icon" type="image/svg+xml" href="thesis_images/site/favicon-original.svg">
 
-  <!-- Load Fonts: Inter (Body), Plus Jakarta Sans (Headings), JetBrains (Mono) -->
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="thesis_images/site/leaflet/leaflet.css"/>
+  <style id="static-utilities">
+/* Static utility CSS: generated once from the original page; no browser compiler or build needed. */
+*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e4e4e7}html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;scroll-behavior:smooth}body{margin:0}h1,h2,h3,h4,h5,h6,p,figure,blockquote{margin:0}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input,select,textarea{font:inherit;color:inherit;margin:0;padding:0;background:none}button{cursor:pointer}ul,ol{margin:0;padding:0;list-style:none}img,svg,video,canvas{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}summary{display:list-item}strong{font-weight:bolder}sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;top:-.5em}button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid rgb(var(--color-accent));outline-offset:4px}
+@keyframes static-bounce{0%,100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,.2,1)}}
+.-ml-0\.5{margin-left:-0.125rem}
+.-ml-1{margin-left:-0.25rem}
+.-mx-4{margin-left:-1rem;margin-right:-1rem}
+.-translate-x-1\/2{--u-x:-50%;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.\[\&\:\:-webkit-scrollbar\]\:hidden::-webkit-scrollbar{display:none}
+.absolute{position:absolute}
+.after\:-translate-x-1\/2::after{content:"";--u-x:-50%;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.after\:-z-10::after{content:"";z-index:-10}
+.after\:absolute::after{content:"";position:absolute}
+.after\:bg-accent::after{content:"";background-color:rgba(var(--color-accent),1)}
+.after\:bg-accent\/20::after{content:"";background-color:rgba(var(--color-accent),0.2)}
+.after\:bottom-1\.5::after{content:"";bottom:0.375rem}
+.after\:bottom-\[4px\]::after{content:"";bottom:4px}
+.after\:duration-300::after{content:"";transition-duration:300ms}
+.after\:h-\[2px\]::after{content:"";height:2px}
+.after\:h-\[6px\]::after{content:"";height:6px}
+.after\:left-0::after{content:"";left:0rem}
+.after\:left-1\/2::after{content:"";left:50%}
+.after\:transition-all::after{content:"";transition-property:all;transition-duration:150ms}
+.after\:w-0::after{content:"";width:0rem}
+.after\:w-full::after{content:"";width:100%}
+.animate-bounce{animation:static-bounce 1s infinite}
+.antialiased{-webkit-font-smoothing:antialiased}
+.aspect-\[4\/3\]{aspect-ratio:4/3}
+.backdrop-blur-md{backdrop-filter:blur(12px)}
+.backdrop-blur-sm{backdrop-filter:blur(4px)}
+.bg-\[\#fafafa\]{background-color:#fafafa}
+.bg-accent\/10{background-color:rgba(var(--color-accent),0.1)}
+.bg-accent\/50{background-color:rgba(var(--color-accent),0.5)}
+.bg-transparent{background-color:transparent}
+.bg-white{background-color:rgba(255,255,255,1)}
+.bg-white\/60{background-color:rgba(255,255,255,0.6)}
+.bg-zinc-100{background-color:rgba(244,244,245,1)}
+.bg-zinc-100\/80{background-color:rgba(244,244,245,0.8)}
+.bg-zinc-200{background-color:rgba(228,228,231,1)}
+.bg-zinc-300{background-color:rgba(212,212,216,1)}
+.bg-zinc-50{background-color:rgba(250,250,250,1)}
+.block{display:block}
+.blur-2xl{filter:blur(40px)}
+.border{border-width:1px}
+.border-accent\/10{border-color:rgba(var(--color-accent),0.1)}
+.border-accent\/20{border-color:rgba(var(--color-accent),0.2)}
+.border-b{border-bottom-width:1px}
+.border-t{border-top-width:1px}
+.border-transparent{border-color:transparent}
+.border-zinc-100{border-color:rgba(244,244,245,1)}
+.border-zinc-200{border-color:rgba(228,228,231,1)}
+.border-zinc-200\/50{border-color:rgba(228,228,231,0.5)}
+.bottom-3{bottom:0.75rem}
+.bottom-4{bottom:1rem}
+.cursor-pointer{cursor:pointer}
+.decoration-2{text-decoration-thickness:2px}
+.decoration-accent\/40{text-decoration-color:rgba(var(--color-accent),0.4)}
+.decoration-zinc-300{text-decoration-color:rgba(212,212,216,1)}
+.duration-300{transition-duration:300ms}
+.duration-500{transition-duration:500ms}
+.duration-700{transition-duration:700ms}
+.fixed{position:fixed}
+.flex{display:flex}
+.flex-1{flex:1 1 0%}
+.flex-col{flex-direction:column}
+.flex-wrap{flex-wrap:wrap}
+.focus\:outline-none:focus{outline:none}
+.font-bold{font-weight:700}
+.font-display{font-family:"Plus Jakarta Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.font-medium{font-weight:500}
+.font-mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.font-normal{font-weight:400}
+.font-sans{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.font-semibold{font-weight:600}
+.gap-1{gap:0.25rem}
+.gap-1\.5{gap:0.375rem}
+.gap-12{gap:3rem}
+.gap-16{gap:4rem}
+.gap-2{gap:0.5rem}
+.gap-3{gap:0.75rem}
+.gap-4{gap:1rem}
+.gap-6{gap:1.5rem}
+.gap-8{gap:2rem}
+.gap-x-16{column-gap:4rem}
+.gap-y-4{row-gap:1rem}
+.grid{display:grid}
+.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}
+.group:hover .group-hover\:bg-accent\/20{background-color:rgba(var(--color-accent),0.2)}
+.group:hover .group-hover\:opacity-100{opacity:1.0}
+.group:hover .group-hover\:scale-\[1\.03\]{--u-s:1.03;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.group:hover .group-hover\:scale-\[1\.2\]{--u-s:1.2;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.group:hover .group-hover\:text-accent{color:rgba(var(--color-accent),1)}
+.h-10{height:2.5rem}
+.h-12{height:3rem}
+.h-36{height:9rem}
+.h-4{height:1rem}
+.h-6{height:1.5rem}
+.h-7{height:1.75rem}
+.h-8{height:2rem}
+.h-\[12px\]{height:12px}
+.h-\[16px\]{height:16px}
+.h-\[400px\]{height:400px}
+.h-full{height:100%}
+.hidden{display:none}
+.hover\:-translate-y-1:hover{--u-y:-0.25rem;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.hover\:after\:w-\[calc\(100\%-16px\)\]:hover::after{content:"";width:calc(100% - 16px)}
+.hover\:bg-zinc-100:hover{background-color:rgba(244,244,245,1)}
+.hover\:opacity-100:hover{opacity:1.0}
+.hover\:scale-110:hover{--u-s:1.1;transform:translate(var(--u-x,0),var(--u-y,0)) scale(var(--u-s,1))}
+.hover\:text-\[\#0A66C2\]:hover{color:#0A66C2}
+.hover\:text-\[\#4285F4\]:hover{color:#4285F4}
+.hover\:text-\[\#A6CE39\]:hover{color:#A6CE39}
+.hover\:text-accent:hover{color:rgba(var(--color-accent),1)}
+.hover\:text-zinc-900:hover{color:rgba(24,24,27,1)}
+.hover\:underline:hover{text-decoration-line:underline}
+.inline-block{display:inline-block}
+.inline-flex{display:inline-flex}
+.inset-0{inset:0rem}
+.items-center{align-items:center}
+.items-start{align-items:flex-start}
+.justify-between{justify-content:space-between}
+.justify-center{justify-content:center}
+.leading-none{line-height:1}
+.leading-relaxed{line-height:1.625}
+.leading-snug{line-height:1.375}
+.left-0{left:0rem}
+.left-1\/2{left:50%}
+.left-\[5px\]{left:5px}
+.list-none{list-style:none}
+.max-w-2xl{max-width:42rem}
+.max-w-3xl{max-width:48rem}
+.max-w-4xl{max-width:56rem}
+.max-w-6xl{max-width:72rem}
+.max-w-\[calc\(100\%-1rem\)\]{max-width:calc(100% - 1rem)}
+.mb-10{margin-bottom:2.5rem}
+.mb-12{margin-bottom:3rem}
+.mb-14{margin-bottom:3.5rem}
+.mb-16{margin-bottom:4rem}
+.mb-2{margin-bottom:0.5rem}
+.mb-2\.5{margin-bottom:0.625rem}
+.mb-20{margin-bottom:5rem}
+.mb-3{margin-bottom:0.75rem}
+.mb-4{margin-bottom:1rem}
+.mb-6{margin-bottom:1.5rem}
+.mb-8{margin-bottom:2rem}
+.min-h-\[100dvh\]{min-height:100dvh}
+.ml-0\.5{margin-left:0.125rem}
+.ml-2{margin-left:0.5rem}
+.ml-3{margin-left:0.75rem}
+.mt-0\.5{margin-top:0.125rem}
+.mt-1{margin-top:0.25rem}
+.mt-1\.5{margin-top:0.375rem}
+.mt-10{margin-top:2.5rem}
+.mt-3{margin-top:0.75rem}
+.mt-4{margin-top:1rem}
+.mt-6{margin-top:1.5rem}
+.mt-8{margin-top:2rem}
+.mt-auto{margin-top:auto}
+.mx-auto{margin-left:auto;margin-right:auto}
+.object-cover{object-fit:cover}
+.opacity-80{opacity:0.8}
+.opacity-90{opacity:0.9}
+.outline-none{outline:none}
+.overflow-hidden{overflow:hidden}
+.overflow-x-auto{overflow-x:auto}
+.overflow-y-auto{overflow-y:auto}
+.p-1\.5{padding:0.375rem}
+.p-3{padding:0.75rem}
+.p-4{padding:1rem}
+.p-5{padding:1.25rem}
+.p-6{padding:1.5rem}
+.p-8{padding:2rem}
+.pb-20{padding-bottom:5rem}
+.pb-4{padding-bottom:1rem}
+.pb-6{padding-bottom:1.5rem}
+.pl-8{padding-left:2rem}
+.pointer-events-none{pointer-events:none}
+.pr-2{padding-right:0.5rem}
+.pr-3{padding-right:0.75rem}
+.pt-10{padding-top:2.5rem}
+.pt-20{padding-top:5rem}
+.pt-24{padding-top:6rem}
+.pt-4{padding-top:1rem}
+.px-2{padding-left:0.5rem;padding-right:0.5rem}
+.px-3{padding-left:0.75rem;padding-right:0.75rem}
+.px-4{padding-left:1rem;padding-right:1rem}
+.px-6{padding-left:1.5rem;padding-right:1.5rem}
+.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}
+.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}
+.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}
+.relative{position:relative}
+.ring-4{box-shadow:0 0 0 4px var(--u-ring,rgba(255,255,255,.5))}
+.ring-white\/90{--u-ring:rgba(255,255,255,0.9)}
+.rounded{border-radius:.25rem}
+.rounded-2xl{border-radius:1rem}
+.rounded-3xl{border-radius:1.5rem}
+.rounded-full{border-radius:9999px}
+.rounded-md{border-radius:.375rem}
+.selection\:bg-accent\/20::selection{background-color:rgba(var(--color-accent),0.2)}
+.selection\:text-accent::selection{color:rgba(var(--color-accent),1)}
+.self-start{align-self:flex-start}
+.shadow-sm{box-shadow:0 1px 2px 0 rgb(0 0 0 / .05)}
+.shadow-xl{box-shadow:0 20px 25px -5px rgb(0 0 0 / .1),0 8px 10px -6px rgb(0 0 0 / .1)}
+.shrink-0{flex-shrink:0}
+.space-y-2 > :not([hidden]) ~ :not([hidden]){margin-top:0.5rem}
+.space-y-3 > :not([hidden]) ~ :not([hidden]){margin-top:0.75rem}
+.space-y-4 > :not([hidden]) ~ :not([hidden]){margin-top:1rem}
+.sticky{position:sticky}
+.text-2xl{font-size:1.5rem;line-height:2rem}
+.text-3xl{font-size:1.875rem;line-height:2.25rem}
+.text-\[10px\]{font-size:10px}
+.text-\[12px\]{font-size:12px}
+.text-accent{color:rgba(var(--color-accent),1)}
+.text-balance{text-wrap:balance}
+.text-base{font-size:1rem;line-height:1.5rem}
+.text-center{text-align:center}
+.text-lg{font-size:1.125rem;line-height:1.75rem}
+.text-sm{font-size:.875rem;line-height:1.25rem}
+.text-xl{font-size:1.25rem;line-height:1.75rem}
+.text-xs{font-size:.75rem;line-height:1rem}
+.text-zinc-300{color:rgba(212,212,216,1)}
+.text-zinc-400{color:rgba(161,161,170,1)}
+.text-zinc-500{color:rgba(113,113,122,1)}
+.text-zinc-600{color:rgba(82,82,91,1)}
+.text-zinc-700{color:rgba(63,63,70,1)}
+.text-zinc-800{color:rgba(39,39,42,1)}
+.text-zinc-900{color:rgba(24,24,27,1)}
+.top-3{top:0.75rem}
+.top-32{top:8rem}
+.top-6{top:1.5rem}
+.top-\[12px\]{top:12px}
+.top-\[21px\]{top:21px}
+.touch-pan-x{touch-action:pan-x}
+.tracking-tight{letter-spacing:-.025em}
+.tracking-widest{letter-spacing:.1em}
+.transition-all{transition-property:all;transition-duration:150ms}
+.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-duration:150ms}
+.transition-transform{transition-property:transform;transition-duration:150ms}
+.underline{text-decoration-line:underline}
+.underline-offset-4{text-underline-offset:4px}
+.uppercase{text-transform:uppercase}
+.w-12{width:3rem}
+.w-36{width:9rem}
+.w-4{width:1rem}
+.w-6{width:1.5rem}
+.w-7{width:1.75rem}
+.w-8{width:2rem}
+.w-\[12px\]{width:12px}
+.w-\[16px\]{width:16px}
+.w-\[2px\]{width:2px}
+.w-full{width:100%}
+.w-max{width:max-content}
+.whitespace-nowrap{white-space:nowrap}
+.z-0{z-index:0}
+.z-10{z-index:10}
+.z-20{z-index:20}
+.z-50{z-index:50}
+.z-\[-2\]{z-index:-2}
+@media(min-width:1024px){.lg\:aspect-auto{aspect-ratio:auto}}
+@media(min-width:1024px){.lg\:flex-row{flex-direction:row}}
+@media(min-width:1024px){.lg\:h-\[560px\]{height:560px}}
+@media(min-width:1024px){.lg\:w-1\/3{width:33.333333%}}
+@media(min-width:1024px){.lg\:w-2\/3{width:66.666667%}}
+@media(min-width:768px){.md\:after\:bottom-\[6px\]::after{content:"";bottom:6px}}
+@media(min-width:768px){.md\:blur-3xl{filter:blur(64px)}}
+@media(min-width:768px){.md\:bottom-5{bottom:1.25rem}}
+@media(min-width:768px){.md\:flex-row{flex-direction:row}}
+@media(min-width:768px){.md\:gap-3{gap:0.75rem}}
+@media(min-width:768px){.md\:gap-4{gap:1rem}}
+@media(min-width:768px){.md\:gap-8{gap:2rem}}
+@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:768px){.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:768px){.md\:grid-cols-\[1fr_2fr\]{grid-template-columns:1fr 2fr}}
+@media(min-width:768px){.md\:h-48{height:12rem}}
+@media(min-width:768px){.md\:h-5{height:1.25rem}}
+@media(min-width:768px){.md\:h-7{height:1.75rem}}
+@media(min-width:768px){.md\:h-8{height:2rem}}
+@media(min-width:768px){.md\:h-9{height:2.25rem}}
+@media(min-width:768px){.md\:h-\[18px\]{height:18px}}
+@media(min-width:768px){.md\:h-\[46px\]{height:46px}}
+@media(min-width:768px){.md\:hover\:after\:w-\[calc\(100\%-24px\)\]:hover::after{content:"";width:calc(100% - 24px)}}
+@media(min-width:768px){.md\:items-center{align-items:center}}
+@media(min-width:768px){.md\:items-end{align-items:flex-end}}
+@media(min-width:768px){.md\:leading-\[1\.7\]{line-height:1.7}}
+@media(min-width:768px){.md\:mb-20{margin-bottom:5rem}}
+@media(min-width:768px){.md\:mb-24{margin-bottom:6rem}}
+@media(min-width:768px){.md\:mb-32{margin-bottom:8rem}}
+@media(min-width:768px){.md\:mb-8{margin-bottom:2rem}}
+@media(min-width:768px){.md\:ml-0{margin-left:0rem}}
+@media(min-width:768px){.md\:ml-1{margin-left:0.25rem}}
+@media(min-width:768px){.md\:mt-0{margin-top:0rem}}
+@media(min-width:768px){.md\:mt-12{margin-top:3rem}}
+@media(min-width:768px){.md\:mt-4{margin-top:1rem}}
+@media(min-width:768px){.md\:p-5{padding:1.25rem}}
+@media(min-width:768px){.md\:p-6{padding:1.5rem}}
+@media(min-width:768px){.md\:p-8{padding:2rem}}
+@media(min-width:768px){.md\:px-3{padding-left:0.75rem;padding-right:0.75rem}}
+@media(min-width:768px){.md\:self-end{align-self:flex-end}}
+@media(min-width:768px){.md\:text-2xl{font-size:1.5rem;line-height:2rem}}
+@media(min-width:768px){.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}}
+@media(min-width:768px){.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}}
+@media(min-width:768px){.md\:text-\[13px\]{font-size:13px}}
+@media(min-width:768px){.md\:text-\[22px\]{font-size:22px}}
+@media(min-width:768px){.md\:text-base{font-size:1rem;line-height:1.5rem}}
+@media(min-width:768px){.md\:text-sm{font-size:.875rem;line-height:1.25rem}}
+@media(min-width:768px){.md\:text-xl{font-size:1.25rem;line-height:1.75rem}}
+@media(min-width:768px){.md\:text-xs{font-size:.75rem;line-height:1rem}}
+@media(min-width:768px){.md\:top-4{top:1rem}}
+@media(min-width:768px){.md\:top-\[25px\]{top:25px}}
+@media(min-width:768px){.md\:w-48{width:12rem}}
+@media(min-width:768px){.md\:w-5{width:1.25rem}}
+@media(min-width:768px){.md\:w-7{width:1.75rem}}
+@media(min-width:768px){.md\:w-8{width:2rem}}
+@media(min-width:768px){.md\:w-9{width:2.25rem}}
+@media(min-width:768px){.md\:w-\[18px\]{width:18px}}
+@media(min-width:640px){.sm\:block{display:block}}
+@media(min-width:640px){.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}}
+@media(min-width:640px){.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}
+.dark .dark\:after\:bg-accent\/30::after{content:"";background-color:rgba(var(--color-accent),0.3)}
+.dark .dark\:bg-\[\#070712\]{background-color:#070712}
+.dark .dark\:bg-accent\/40{background-color:rgba(var(--color-accent),0.4)}
+.dark .dark\:bg-black\/30{background-color:rgba(0,0,0,0.3)}
+.dark .dark\:bg-white\/10{background-color:rgba(255,255,255,0.1)}
+.dark .dark\:bg-white\/15{background-color:rgba(255,255,255,0.15)}
+.dark .dark\:bg-white\/20{background-color:rgba(255,255,255,0.2)}
+.dark .dark\:bg-white\/5{background-color:rgba(255,255,255,0.05)}
+.dark .dark\:border-white\/10{border-color:rgba(255,255,255,0.1)}
+.dark .dark\:border-white\/20{border-color:rgba(255,255,255,0.2)}
+.dark .dark\:border-white\/5{border-color:rgba(255,255,255,0.05)}
+.dark .dark\:decoration-zinc-700{text-decoration-color:rgba(63,63,70,1)}
+.group:hover .dark .dark\:group-hover\:bg-accent\/30{background-color:rgba(var(--color-accent),0.3)}
+.group:hover .dark .dark\:group-hover\:text-accent{color:rgba(var(--color-accent),1)}
+.dark .dark\:hover\:bg-white\/10:hover{background-color:rgba(255,255,255,0.1)}
+.dark .dark\:hover\:text-\[\#818cf8\]:hover{color:#818cf8}
+.dark .dark\:hover\:text-accent:hover{color:rgba(var(--color-accent),1)}
+.dark .dark\:hover\:text-white:hover{color:rgba(255,255,255,1)}
+.dark .dark\:opacity-100{opacity:1.0}
+.dark .dark\:ring-white\/10{--u-ring:rgba(255,255,255,0.1)}
+.dark .dark\:selection\:text-accent::selection{color:rgba(var(--color-accent),1)}
+.dark .dark\:text-white{color:rgba(255,255,255,1)}
+.dark .dark\:text-white\/20{color:rgba(255,255,255,0.2)}
+.dark .dark\:text-white\/30{color:rgba(255,255,255,0.3)}
+.dark .dark\:text-white\/40{color:rgba(255,255,255,0.4)}
+.dark .dark\:text-white\/50{color:rgba(255,255,255,0.5)}
+.dark .dark\:text-white\/60{color:rgba(255,255,255,0.6)}
+.dark .dark\:text-white\/80{color:rgba(255,255,255,0.8)}
+.dark .dark\:text-zinc-100{color:rgba(244,244,245,1)}
+.dark .dark\:text-zinc-200{color:rgba(228,228,231,1)}
+.dark .dark\:text-zinc-300{color:rgba(212,212,216,1)}
+.dark .dark\:text-zinc-400{color:rgba(161,161,170,1)}
+.dark .dark\:text-zinc-500{color:rgba(113,113,122,1)}
+  </style>
 
-  <!-- Leaflet CSS for Map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-  <!-- TopoJSON for pure border map (NO ROADS, NO CLUTTER) -->
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Tailwind Configuration -->
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            accent: 'rgb(var(--color-accent) / <alpha-value>)'
-          }
-        }
-      }
-    }
-  </script>
-  
   <!-- Theme initialization -->
   <script>
     // Set dark mode as the absolute default, unless the user explicitly toggled to light mode previously
-    if (localStorage.getItem('color-theme') === 'light') {
+    if ((() => { try { return localStorage.getItem('color-theme'); } catch { return null; } })() === 'light') {
       document.documentElement.classList.remove('dark');
     } else {
       document.documentElement.classList.add('dark');
@@ -278,8 +601,8 @@
 
     /* UPGRADED: Premium Biotech Scroll reveal animation */
     .reveal {
-      opacity: 0;
-      transform: translateY(40px) scale(0.98);
+      opacity: 1;
+      transform: none;
       transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
                   transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
@@ -468,6 +791,36 @@
       color: rgb(var(--color-accent));
     }
   </style>
+<style>
+    /* Static-page resilience and keyboard/mobile navigation. */
+    html{--nav-anchor-offset:88px}
+    section[id]{scroll-margin-top:var(--nav-anchor-offset)}
+    .reveal{opacity:1;transform:none}
+    [hidden]{display:none!important}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,::before,::after{animation:none!important;transition:none!important}#network-canvas{display:none}}
+    .presentation-map-fallback{padding:24px;color:inherit;opacity:.7;font-size:14px}
+</style>
+<noscript><style>.talk-list-item.hidden{display:block}.map-tab-btn,#theme-toggle,#list-count,[data-presentation-map-panel]{display:none}[data-presentation-events-panel]{width:100%;height:auto}[data-presentation-events-panel] .overflow-y-auto{overflow:visible}</style></noscript>
+<link rel="stylesheet" href="thesis_images/site/fonts/fonts.css">
+<style id="navigation-mobile-style">
+/* Misc: static image archive. Content remains readable without JavaScript. */
+html{scroll-padding-top:var(--nav-anchor-offset,88px)}
+/* Keep all six navigation links, including Misc, visible on narrow phones. */
+@media(max-width:540px){header.ios-glass-nav{width:calc(100% - 20px);max-width:460px;border-radius:18px}header.ios-glass-nav>div{height:auto;min-height:46px;padding:7px 9px;overflow:visible;justify-content:space-between}header.ios-glass-nav nav{flex:1;display:flex;flex-wrap:wrap;justify-content:center;white-space:normal;gap:0 2px}header.ios-glass-nav nav a{padding:6px 8px;font-size:12px}header.ios-glass-nav #theme-toggle{margin-left:5px}}
+
+</style>
+<style id="navigation-motion-style">
+/* Precise floating navigation with restrained motion. */
+html{scroll-padding-top:var(--nav-anchor-offset,88px)}
+html.navigation-motion-ready{scroll-behavior:auto}
+section[id]{scroll-margin-top:var(--nav-anchor-offset,88px)}
+header.ios-glass-nav nav .nav-link{position:relative;transition:color .22s ease}
+header.ios-glass-nav nav .nav-link[aria-current]{color:rgb(var(--color-accent));font-weight:600}
+header.ios-glass-nav nav .nav-link[aria-current]::after{width:calc(100% - 16px)}
+@media(min-width:768px){header.ios-glass-nav nav .nav-link[aria-current]::after{width:calc(100% - 24px)}}
+@media(prefers-reduced-motion:reduce){header.ios-glass-nav nav .nav-link{transition:none!important}}
+
+</style>
 </head>
 <body class="antialiased bg-[#fafafa] dark:bg-[#070712] text-zinc-800 dark:text-zinc-300 transition-colors duration-500 selection:bg-accent/20 selection:text-accent dark:selection:text-accent">
   
@@ -489,6 +842,7 @@
         <a class="nav-link px-2 md:px-3 py-2 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[4px] md:after:bottom-[6px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)] md:hover:after:w-[calc(100%-24px)]" href="#news">News</a>
         <a class="nav-link px-2 md:px-3 py-2 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[4px] md:after:bottom-[6px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)] md:hover:after:w-[calc(100%-24px)]" href="#talks">Talks</a>
         <a class="nav-link px-2 md:px-3 py-2 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[4px] md:after:bottom-[6px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)] md:hover:after:w-[calc(100%-24px)]" href="#honors">Honors</a>
+        <a class="nav-link px-2 md:px-3 py-2 hover:text-accent dark:hover:text-white transition-colors relative after:absolute after:bottom-[4px] md:after:bottom-[6px] after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)] md:hover:after:w-[calc(100%-24px)]" href="thesis_images/misc.html">Misc</a>
       </nav>
       
       <!-- Theme Toggle Button -->
@@ -515,7 +869,7 @@
           <!-- Ambient glowing background with breathing animation -->
           <div class="absolute inset-0 bg-accent/50 dark:bg-accent/40 rounded-full blur-2xl md:blur-3xl transition-all duration-700 animate-avatar-breathe group-hover:scale-[1.2] group-hover:opacity-100"></div>
           
-          <img alt="Ping Cao" class="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover shadow-xl border border-zinc-200/50 dark:border-white/20 ring-4 ring-white/90 dark:ring-white/10 transition-transform duration-700 group-hover:scale-[1.03]" src="https://github.com/user-attachments/assets/b65d2672-69a3-41ae-a736-7cb910854d62"/>
+          <img alt="Ping Cao" class="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover shadow-xl border border-zinc-200/50 dark:border-white/20 ring-4 ring-white/90 dark:ring-white/10 transition-transform duration-700 group-hover:scale-[1.03]" src="thesis_images/site/profile-original.jpg"/>
         </div>
 
         <!-- Name and Title -->
@@ -886,10 +1240,10 @@
         
         <!-- Map Region Toggles -->
         <div class="flex bg-zinc-100/80 dark:bg-white/5 rounded-full p-1.5 border border-zinc-200 dark:border-white/10 self-start md:self-end z-10 relative backdrop-blur-sm">
-          <button id="btn-europe" class="map-tab-btn active px-6 py-2.5 text-sm font-mono font-semibold rounded-full bg-white dark:bg-white/15 text-zinc-900 dark:text-white shadow-sm transition-all border border-zinc-200/50 dark:border-white/10">
+          <button id="btn-europe" aria-pressed="true" class="map-tab-btn active px-6 py-2.5 text-sm font-mono font-semibold rounded-full bg-white dark:bg-white/15 text-zinc-900 dark:text-white shadow-sm transition-all border border-zinc-200/50 dark:border-white/10">
             EUROPE
           </button>
-          <button id="btn-global" class="map-tab-btn px-6 py-2.5 text-sm font-mono font-semibold rounded-full text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white transition-all border border-transparent">
+          <button id="btn-global" aria-pressed="false" class="map-tab-btn px-6 py-2.5 text-sm font-mono font-semibold rounded-full text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white transition-all border border-transparent">
             GLOBAL
           </button>
         </div>
@@ -897,13 +1251,13 @@
       
       <div class="flex flex-col lg:flex-row gap-6 bg-white/60 dark:bg-white/5 border border-zinc-200 dark:border-white/10 rounded-3xl p-5 shadow-sm relative backdrop-blur-md reveal">
         
-        <!-- Real Leaflet Map Canvas Area -->
-        <div class="relative w-full lg:w-2/3 aspect-[4/3] lg:aspect-auto lg:h-[560px] bg-zinc-50 dark:bg-black/30 rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10">
-          <div id="presentation-map" class="w-full h-full"></div>
+        <!-- Interactive map, with event details available independently below. -->
+        <div data-presentation-map-panel class="relative w-full lg:w-2/3 aspect-[4/3] lg:aspect-auto lg:h-[560px] bg-zinc-50 dark:bg-black/30 rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10">
+          <div id="presentation-map" class="w-full h-full" aria-label="Map of presentation locations"><p class="presentation-map-fallback">Presentation locations are listed in the event details.</p></div>
         </div>
 
         <!-- Presentation List Panel -->
-        <div class="w-full lg:w-1/3 flex flex-col h-[400px] lg:h-[560px]">
+        <div data-presentation-events-panel class="w-full lg:w-1/3 flex flex-col h-[400px] lg:h-[560px]">
           <div class="p-4 border-b border-zinc-200 dark:border-white/10 bg-transparent">
             <h4 class="font-display font-bold text-xl text-zinc-900 dark:text-zinc-100" id="list-title">Europe Presentations</h4>
             <p class="text-sm text-zinc-500 dark:text-white/50 font-mono mt-1" id="list-count">11 events in this view</p>
@@ -1317,65 +1671,14 @@
     </footer>
   </main>
 
-  <!-- JS Libraries -->
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <!-- Lenis JS for Smooth Scrolling (The Cubicle Biotechnology Secret Sauce) -->
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-
-  <!-- Interactive Scripts -->
+  <!-- Local map libraries and embedded topology also work when opened with file://. -->
+  <script src="thesis_images/site/leaflet/leaflet.js"></script>
+  <script src="thesis_images/site/topojson-client.min.js"></script>
+  <script src="thesis_images/site/countries-50m.js"></script>
+  <!-- Interactive Scripts: native browser APIs and bundled local map assets. -->
   <script>
-    // ----------------------------------------------------
-    // 0. Premium Smooth Scrolling Initialization (Lenis)
-    // ----------------------------------------------------
-    const lenis = new Lenis({
-      duration: 1.2, // Crisp response time
-      easing: (t) => 1 - Math.pow(1 - t, 4), // Quartic Ease-Out curve
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    // Bind Lenis Request Animation Frame
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Intercept nav clicks for smooth scrolling
-    document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          // Special handling for brand click to scroll to top
-          if (targetId === '#main') {
-            lenis.scrollTo(0, {
-              duration: 1.2,
-              easing: (t) => 1 - Math.pow(1 - t, 4)
-            });
-          } else {
-            // Let Lenis handle the target element directly to avoid coordinate shift issues
-            const isMobile = window.innerWidth < 768;
-            const offsetVal = isMobile ? -65 : -80; // Adaptive offset for mobile vs desktop headers
-            
-            lenis.scrollTo(targetElement, {
-              offset: offsetVal,
-              duration: 1.2,
-              easing: (t) => 1 - Math.pow(1 - t, 4) 
-            });
-          }
-        }
-      });
-    });
-
+    // Precise section positioning and navigation motion are initialized by the
+    // bundled navigation script after the page's main interactions.
     // ----------------------------------------------------
     // 1. Theme Toggle Logic
     // ----------------------------------------------------
@@ -1388,7 +1691,7 @@
     let worldGeoJsonData = null;
 
     function setMapTheme(isDark) {
-      if (!map) return;
+      if (!map || typeof L === 'undefined') return;
       
       // Minimalist map style definition
       const style = isDark ? {
@@ -1426,13 +1729,25 @@
       
       if (isDark) {
         document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
+        try { localStorage.setItem('color-theme', 'light'); } catch {}
         setMapTheme(false);
       } else {
         document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
+        try { localStorage.setItem('color-theme', 'dark'); } catch {}
         setMapTheme(true);
       }
+      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to dark mode' : 'Switch to light mode');
+    });
+
+    // Returning from Misc may restore this document from the browser's page cache.
+    window.addEventListener('pageshow', function() {
+      let isDark = document.documentElement.classList.contains('dark');
+      try { isDark = localStorage.getItem('color-theme') !== 'light'; } catch {}
+      document.documentElement.classList.toggle('dark', isDark);
+      darkIcon.classList.toggle('hidden', isDark);
+      lightIcon.classList.toggle('hidden', !isDark);
+      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      setMapTheme(isDark);
     });
 
     // ----------------------------------------------------
@@ -1444,16 +1759,16 @@
       rootMargin: "0px 0px -40px 0px"
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('active');
         observer.unobserve(entry.target); 
       });
-    }, revealOptions);
+    }, revealOptions) : null;
 
     revealElements.forEach(el => {
-      revealObserver.observe(el);
+      if (revealObserver) revealObserver.observe(el); else el.classList.add('active');
     });
 
     // ----------------------------------------------------
@@ -1594,9 +1909,10 @@
     window.addEventListener('resize', initNetwork);
 
     // ----------------------------------------------------
-    // 4. Real Interactive Map Logic (Leaflet.js)
+    // 4. Interactive presentation map (bundled Leaflet and TopoJSON)
     // ----------------------------------------------------
     document.addEventListener('DOMContentLoaded', () => {
+      const reduceMapMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       // Offset coordinates slightly to prevent overlaps
       const cities = {
         maastricht: { coords: [50.8391, 5.7160], label: "Maastricht" },
@@ -1622,18 +1938,26 @@
         [60.0, 120.0]   
       ];
 
-      map = L.map('presentation-map', {
+      const mapElement = document.getElementById('presentation-map');
+      if (typeof L !== 'undefined') {
+        const fallback = mapElement.querySelector('.presentation-map-fallback');
+        try {
+          if (fallback) fallback.remove();
+          map = L.map('presentation-map', {
         scrollWheelZoom: false,
         zoomControl: true,
+        zoomAnimation: !reduceMapMotion(),
+        fadeAnimation: !reduceMapMotion(),
+        markerZoomAnimation: !reduceMapMotion()
       });
       
       map.zoomControl.setPosition('bottomright');
       map.fitBounds(europeBounds, { padding: [20, 20] });
 
-      // Fetch Pure Vector Borders (TopoJSON)
-      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
-        .then(response => response.json())
+      // Topology is provided by a local script, so direct file:// use needs no fetch.
+      Promise.resolve(window.thesisWorldTopology)
         .then(topology => {
+          if (!topology?.objects?.countries || typeof topojson === 'undefined') return;
           worldGeoJsonData = topojson.feature(topology, topology.objects.countries);
           
           // Fix Antimeridian crossing bug
@@ -1666,7 +1990,7 @@
 
           setMapTheme(document.documentElement.classList.contains('dark'));
         })
-        .catch(err => console.error('Failed to load map data:', err));
+        .catch(err => console.warn('Presentation map borders could not be drawn:', err));
 
       const leafletMarkers = {};
       
@@ -1686,9 +2010,16 @@
           iconAnchor: [0, 0] 
         });
 
-        const marker = L.marker(city.coords, { icon: customIcon }).addTo(map);
+        const marker = L.marker(city.coords, { icon: customIcon, title: city.label, alt: city.label }).addTo(map);
         leafletMarkers[id] = marker;
       });
+
+        } catch (err) {
+          if (map) { map.remove(); map = null; }
+          if (fallback && !mapElement.contains(fallback)) mapElement.appendChild(fallback);
+          console.warn('Presentation map is unavailable; event details remain readable.', err);
+        }
+      }
 
       const btnEurope = document.getElementById('btn-europe');
       const btnGlobal = document.getElementById('btn-global');
@@ -1699,11 +2030,17 @@
       const activeBtnClasses = ['bg-white', 'dark:bg-white/15', 'text-zinc-900', 'dark:text-white', 'shadow-sm', 'border-zinc-200/50', 'dark:border-white/10'];
       const inactiveBtnClasses = ['text-zinc-500', 'dark:text-white/50', 'hover:text-zinc-900', 'dark:hover:text-white', 'border-transparent'];
 
-      function switchTab(region) {
+      function moveMap(bounds, animate) {
+        if (!map) return;
+        if (!animate || reduceMapMotion()) map.fitBounds(bounds, { padding: [30, 30], animate: false });
+        else map.flyToBounds(bounds, { duration: 1.5, padding: [30, 30] });
+      }
+
+      function switchTab(region, animate = true) {
         let visibleCount = 0;
 
         if (region === 'europe') {
-          map.flyToBounds(europeBounds, { duration: 1.5, padding: [30, 30] });
+          moveMap(europeBounds, animate);
           
           btnEurope.classList.add(...activeBtnClasses);
           btnEurope.classList.remove(...inactiveBtnClasses);
@@ -1711,7 +2048,7 @@
           btnGlobal.classList.add(...inactiveBtnClasses);
           listTitle.textContent = 'Europe Presentations';
         } else {
-          map.flyToBounds(globalBounds, { duration: 1.5, padding: [30, 30] });
+          moveMap(globalBounds, animate);
           
           btnGlobal.classList.add(...activeBtnClasses);
           btnGlobal.classList.remove(...inactiveBtnClasses);
@@ -1731,25 +2068,26 @@
           }
         });
         listCount.textContent = `${visibleCount} event${visibleCount !== 1 ? 's' : ''} in this view`;
+        btnEurope.setAttribute('aria-pressed', String(region === 'europe'));
+        btnGlobal.setAttribute('aria-pressed', String(region === 'global'));
       }
 
       btnEurope.addEventListener('click', () => switchTab('europe'));
       btnGlobal.addEventListener('click', () => switchTab('global'));
 
       listItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          const cityId = item.dataset.city;
-          const targetMarkerEl = document.getElementById(`marker-${cityId}`);
-          if(targetMarkerEl) targetMarkerEl.classList.add('highlight');
-        });
-        item.addEventListener('mouseleave', () => {
-          const cityId = item.dataset.city;
-          const targetMarkerEl = document.getElementById(`marker-${cityId}`);
-          if(targetMarkerEl) targetMarkerEl.classList.remove('highlight');
-        });
+        function updateHighlight() {
+          const markerElement = document.getElementById(`marker-${item.dataset.city}`);
+          if (markerElement) markerElement.classList.toggle('highlight', item.matches(':hover') || item.contains(document.activeElement));
+        }
+        item.addEventListener('mouseenter', updateHighlight);
+        item.addEventListener('mouseleave', updateHighlight);
+        item.addEventListener('focusin', updateHighlight);
+        item.addEventListener('focusout', () => requestAnimationFrame(updateHighlight));
       });
-      
-      setTimeout(() => { map.invalidateSize(); }, 500);
+
+      switchTab('europe', false);
+      setTimeout(() => { if (map) map.invalidateSize({ animate: false }); }, 500);
     });
 
     // ----------------------------------------------------
@@ -1768,5 +2106,124 @@
       });
     });
   </script>
+<script id="navigation-motion-script">
+(() => {
+  const header = document.querySelector('header.ios-glass-nav');
+  const nav = header && header.querySelector('nav');
+  if (!header || !nav) return;
+  document.documentElement.classList.add('navigation-motion-ready');
+
+  const links = [...nav.querySelectorAll('a.nav-link')];
+  const sectionLinks = links.map(link => {
+    const href = link.getAttribute('href') || '';
+    if (!href.startsWith('#') || href.length < 2) return null;
+    const target = document.getElementById(href.slice(1));
+    return target ? {link, target, hash:href} : null;
+  }).filter(Boolean);
+  const scrollTriggers = [...document.querySelectorAll('a.nav-link')].map(link => {
+    const href = link.getAttribute('href') || '';
+    if (!href.startsWith('#') || href.length < 2) return null;
+    const target = document.getElementById(href.slice(1));
+    return target ? {link, target, hash:href} : null;
+  }).filter(Boolean);
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  let activeLink = nav.querySelector('[aria-current="page"]');
+  let scrollFrame = 0;
+  let activeFrame = 0;
+
+  function navigationOffset() {
+    return Math.ceil(header.getBoundingClientRect().bottom + 22);
+  }
+
+  function updateNavigationOffset() {
+    document.documentElement.style.setProperty('--nav-anchor-offset', `${navigationOffset()}px`);
+  }
+
+  function setActive(link) {
+    if (activeLink && activeLink.getAttribute('aria-current') === 'location') activeLink.removeAttribute('aria-current');
+    activeLink = link || nav.querySelector('[aria-current="page"]');
+    if (activeLink && activeLink.getAttribute('aria-current') !== 'page') activeLink.setAttribute('aria-current', 'location');
+  }
+
+  function targetTop(target) {
+    updateNavigationOffset();
+    return Math.max(0, Math.round(window.scrollY + target.getBoundingClientRect().top - navigationOffset()));
+  }
+
+  function scrollToSection(target, animate = true) {
+    cancelAnimationFrame(scrollFrame);
+    const start = window.scrollY;
+    const destination = targetTop(target);
+    const change = destination - start;
+    if (!animate || reducedMotion.matches || Math.abs(change) < 2) {
+      window.scrollTo(0, destination);
+      return;
+    }
+    const duration = Math.min(700, Math.max(360, 320 + Math.abs(change) * .05));
+    const started = performance.now();
+    function step(now) {
+      const progress = Math.min(1, (now - started) / duration);
+      const eased = 1 - Math.pow(1 - progress, 4);
+      window.scrollTo(0, start + change * eased);
+      if (progress < 1) {
+        scrollFrame = requestAnimationFrame(step);
+      } else {
+        window.scrollTo(0, targetTop(target));
+      }
+    }
+    scrollFrame = requestAnimationFrame(step);
+  }
+
+  function updateActiveFromScroll() {
+    cancelAnimationFrame(activeFrame);
+    activeFrame = requestAnimationFrame(() => {
+      const marker = navigationOffset() + 4;
+      let current = null;
+      for (const item of sectionLinks) {
+        if (item.target.getBoundingClientRect().top <= marker) current = item.link;
+      }
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 3 && sectionLinks.length) {
+        current = sectionLinks[sectionLinks.length - 1].link;
+      }
+      if (current !== activeLink) setActive(current);
+    });
+  }
+
+  for (const item of scrollTriggers) {
+    item.link.addEventListener('click', event => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (window.location.hash === item.hash) history.replaceState(null, '', item.hash);
+      else history.pushState(null, '', item.hash);
+      const menuItem = sectionLinks.find(candidate => candidate.hash === item.hash);
+      setActive(menuItem ? menuItem.link : null);
+      scrollToSection(item.target, true);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveFromScroll, {passive:true});
+  window.addEventListener('resize', () => {
+    updateNavigationOffset();
+    updateActiveFromScroll();
+  }, {passive:true});
+  function alignLocationHash() {
+    const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+    if (target) scrollToSection(target, false);
+  }
+  window.addEventListener('popstate', alignLocationHash);
+  window.addEventListener('hashchange', alignLocationHash);
+  if ('ResizeObserver' in window) new ResizeObserver(updateNavigationOffset).observe(header);
+
+  updateNavigationOffset();
+  const initialTarget = window.location.hash && document.getElementById(window.location.hash.slice(1));
+  const fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  fontsReady.then(() => requestAnimationFrame(() => {
+    if (initialTarget) scrollToSection(initialTarget, false);
+    updateActiveFromScroll();
+  }));
+})();
+
+</script>
 </body>
 </html>
