@@ -838,6 +838,69 @@ header.ios-glass-nav nav .nav-link[aria-current]::after{width:calc(100% - 16px)}
 @media(prefers-reduced-motion:reduce){header.ios-glass-nav nav .nav-link{transition:none!important}}
 
 </style>
+<style id="map-theme-style">
+/* Balanced cartography for both colour themes. */
+[data-presentation-map-panel]{background:#edf1f7;border-color:#d7dee9}
+.leaflet-container{
+  background:
+    radial-gradient(circle at 24% 32%,rgba(var(--color-accent),.065),transparent 27%),
+    radial-gradient(circle at 78% 72%,rgba(var(--color-accent),.045),transparent 31%),
+    linear-gradient(145deg,#eef2f8 0%,#e5ebf3 100%)!important;
+}
+#presentation-map .leaflet-overlay-pane path{
+  fill:#fbfcfe!important;
+  fill-opacity:.98!important;
+  stroke:#b9c4d3!important;
+  stroke-opacity:.9!important;
+  stroke-width:1.1!important;
+}
+.leaflet-control-zoom{
+  border-color:rgba(84,96,130,.18)!important;
+  box-shadow:0 6px 18px rgba(43,52,76,.1)!important;
+}
+.leaflet-control-zoom a{
+  background-color:rgba(255,255,255,.94)!important;
+  border-color:rgba(84,96,130,.1)!important;
+}
+.bl-marker-label{
+  border-color:rgba(84,96,130,.12);
+  box-shadow:0 5px 16px rgba(43,52,76,.12);
+}
+.dark [data-presentation-map-panel]{background:#151825;border-color:rgba(255,255,255,.12)}
+.dark .leaflet-container{
+  background:
+    radial-gradient(circle at 24% 32%,rgba(var(--color-accent),.105),transparent 29%),
+    radial-gradient(circle at 78% 72%,rgba(var(--color-accent),.07),transparent 33%),
+    linear-gradient(145deg,#191c2a 0%,#121521 100%)!important;
+}
+.dark #presentation-map .leaflet-overlay-pane path{
+  fill:#282c3c!important;
+  fill-opacity:.98!important;
+  stroke:rgba(226,232,240,.24)!important;
+  stroke-opacity:1!important;
+  stroke-width:1.05!important;
+}
+.dark .leaflet-control-zoom{
+  border-color:rgba(255,255,255,.13)!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.28)!important;
+}
+.dark .leaflet-control-zoom a{
+  background-color:rgba(39,43,59,.96)!important;
+  border-color:rgba(255,255,255,.1)!important;
+}
+.dark .leaflet-control-zoom a:hover{background-color:#303548!important}
+.dark .bl-marker-dot{
+  border-color:#1a1d2b;
+  box-shadow:0 4px 10px rgba(0,0,0,.36);
+}
+.dark .bl-marker-label{
+  background-color:rgba(37,41,56,.95);
+  border-color:rgba(255,255,255,.13);
+  box-shadow:0 5px 16px rgba(0,0,0,.3);
+}
+.dark .bl-marker-wrapper.highlight .bl-marker-dot{background:#1a1d2b}
+
+</style>
 </head>
 <body class="antialiased bg-[#fafafa] dark:bg-[#070712] text-zinc-800 dark:text-zinc-300 transition-colors duration-500 selection:bg-accent/20 selection:text-accent dark:selection:text-accent">
   
